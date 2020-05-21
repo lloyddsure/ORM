@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B6770C11-2ABF-4039-83C5-455575F49114}</ProjectGuid>
+    <ProjectGuid>{77682BCE-A915-4094-9603-C397DB0F48D3}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>ORM</RootNamespace>
-    <AssemblyName>ORM</AssemblyName>
+    <RootNamespace>Useful</RootNamespace>
+    <AssemblyName>Useful</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -19,7 +19,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>ORM.xml</DocumentationFile>
+    <DocumentationFile>Useful.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -28,7 +28,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>ORM.xml</DocumentationFile>
+    <DocumentationFile>Useful.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -64,6 +64,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DependancyInjection\DependancyInjection.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -79,35 +80,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Oracle\IOracleKernel.vb" />
-    <Compile Include="Oracle\OracleAdapter.vb" />
-    <Compile Include="Oracle\OracleKernel.vb" />
-    <Compile Include="ORM\AttributProperty.vb" />
-    <Compile Include="ORM\AttributTable.vb" />
-    <Compile Include="ORM\EntityDB.vb" />
-    <Compile Include="ORM\IAdapter.vb" />
-    <Compile Include="ORM\ResearchTerms\Conjunction\Conjunction.vb" />
-    <Compile Include="ORM\ResearchTerms\Conjunction\OperatorAND.vb" />
-    <Compile Include="ORM\ResearchTerms\Conjunction\OperatorOR.vb" />
-    <Compile Include="ORM\ResearchTerms\IBaseCondition.vb" />
-    <Compile Include="ORM\ResearchTerms\IResearch.vb" />
-    <Compile Include="ORM\ResearchTerms\Research.vb" />
-    <Compile Include="ORM\ResearchTerms\ResearchOperator\ResearchOperator.vb" />
-    <Compile Include="ORM\ResearchTerms\ResearchOperator\BetweenRO.vb" />
-    <Compile Include="ORM\ResearchTerms\ResearchOperator\EqualRO.vb" />
-    <Compile Include="ORM\ResearchTerms\ResearchOperator\HigherRO.vb" />
-    <Compile Include="ORM\ResearchTerms\ResearchOperator\InRO.vb" />
-    <Compile Include="ORM\ResearchTerms\ResearchOperator\LowerRO.vb" />
-    <Compile Include="ORM\ResearchTerms\ResearchOperator\NotEqualRO.vb" />
-    <Compile Include="ORM\SQL\EntityTransformer\ITransformerEntity.vb" />
-    <Compile Include="ORM\SQL\EntityTransformer\TransformerEntity.vb" />
-    <Compile Include="ORM\SQL\SQLConstruction.vb" />
-    <Compile Include="ORM\SQL\SQLParameter.vb" />
-    <Compile Include="ORM\SQL\SQLTransformer\Condition\FormateSQLConditions.vb" />
-    <Compile Include="ORM\SQL\SQLTransformer\Condition\IFormateSQLConditions.vb" />
-    <Compile Include="ORM\SQL\SQLTransformer\ITransformerSQL.vb" />
-    <Compile Include="ORM\SQL\SQLTransformer\TransformerSQL.vb" />
-    <Compile Include="Register.vb" />
+    <Compile Include="Parameter\IListParameter.vb" />
+    <Compile Include="Parameter\ListParameter.vb" />
+    <Compile Include="Parameter\Parameter.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -127,10 +102,6 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Environment\" />
-    <Folder Include="Exceptions\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
